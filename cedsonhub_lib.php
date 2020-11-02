@@ -302,22 +302,25 @@ final class PayoutAPI extends BaseCedsonHub
         // validate values before making api call
         if (!$this->validate_amount($amount_in_coins)) {
             return array(
-                "status" => 400,
-                "message" => "Invalid amount_in_coins"
+                "success" => false,
+                "result" => array(),
+                "error" => "Invalid amount_in_coins"
             );
         }
 
         if (!$this->validate_amount($amount_in_satoshis)) {
             return array(
-                "status" => 400,
-                "message" => "Invalid amount_in_satoshis"
+                "success" => false,
+                "result" => array(),
+                "error" => "Invalid amount_in_satoshis"
             );
         }
 
         if (!$this->is_currency($currency)) {
             return array(
-                "status" => 400,
-                "message" => "Invalid currency"
+                "success" => false,
+                "result" => array(),
+                "error" => "Invalid currency"
             );
         }
 
@@ -489,8 +492,9 @@ final class AcceptPaymentVerify extends BaseCedsonHub
 final class CedsonHubApi extends BaseCedsonHub
 {
     private $server_is_not_respoding = array(
-        "status" => 999,
-        "message" => "CedsonHub server is not responding"
+        "success" => false,
+        "result" => array(),
+        "error" => "CedsonHub server is not responding"
     );
 
     final public function call_get_balance() {

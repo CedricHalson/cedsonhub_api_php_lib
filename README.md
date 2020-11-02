@@ -34,7 +34,7 @@ $cedsonhub_api = new CedsonHubApi("if_you_are_using_dummy_api_key_ensure_it_has_
 $balance = $cedsonhub_api->call_get_balance();
 
 if ($balance["success"]) {
-    // do your staff with balance
+    // do your stuff with balance
     var_dump($balance["result"]);
 } else {
     // handle error

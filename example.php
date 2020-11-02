@@ -32,7 +32,7 @@ $cedsonhub_api = new CedsonHubApi("if_you_are_using_dummy_api_key_ensure_it_has_
 $balance = $cedsonhub_api->call_get_balance();
 
 if ($balance["success"]) {
-    // do your staff with balance
+    // do your stuff with balance
     format_response($balance["result"]);
 } else {
     // handle error
@@ -43,7 +43,7 @@ if ($balance["success"]) {
 $supported_coins = $cedsonhub_api->call_get_supported_coins();
 
 if ($supported_coins["success"]) {
-    // do your staff with supported coins
+    // do your stuff with supported coins
     format_response($supported_coins["result"]);
 } else {
     // handle error
@@ -55,7 +55,7 @@ if ($supported_coins["success"]) {
 $is_username = $cedsonhub_api->call_check_username("john_doe");
 
 if ($is_username["success"]) {
-    // do your staff with username
+    // do your stuff with username
     format_response($is_username["result"]);
 } else {
     // handle error
@@ -73,7 +73,7 @@ if ($is_username["success"]) {
 $payout = $cedsonhub_api->call_payout("john_doe", "BTC", "1", "1", true, "99.98.97.96");
 
 if ($payout["success"]) {
-    // do your staff with payout response
+    // do your stuff with payout response
     format_response($payout["result"]);
 } else {
     // handle error
@@ -84,7 +84,7 @@ if ($payout["success"]) {
 $recent_payouts = $cedsonhub_api->call_get_recent_payouts();
 
 if ($recent_payouts["success"]) {
-    // do your staff with recent payouts
+    // do your stuff with recent payouts
     format_response($recent_payouts["result"]);
 } else {
     // handle error
@@ -96,7 +96,7 @@ if ($recent_payouts["success"]) {
 $sites_list = $cedsonhub_api->call_get_sites_list();
 
 if ($sites_list["success"]) {
-    // do your staff with sites list
+    // do your stuff with sites list
     format_response($sites_list["result"]);
 } else {
     // handle error
@@ -138,7 +138,7 @@ if ($invoice_status["success"]) {
     }
     // invoice is paid, please dont check its status again, it is complete
     elseif ($invoice_status["result"]["status"] == "Paid") {
-        // invoice is paid, here do your staff with sent funds
+        // invoice is paid, here do your stuff with sent funds
         echo "You are granted a premium access on our project.";
     }
 
